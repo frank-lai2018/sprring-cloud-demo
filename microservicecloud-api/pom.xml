@@ -1,0 +1,17 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<!-- 子類裡面顯示聲明才能有明確的繼承表現，無意外就是父類的默認版本否則自己定義 -->
+		<groupId>com.frank.springcloud</groupId>
+		<artifactId>microservicecloud</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>microservicecloud-api</artifactId> <!-- 當前Module我自己叫什麼名字 --> <!-- -->
+	<dependencies>
+		<!-- 當前Module需要用到的jar包，按自己需求添加，如果父類已經包含了，可以不用寫版本號 -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+	</dependencies>
+</project>
