@@ -2,10 +2,12 @@ package com.frank.springcloud.entities;
 
 import java.io.Serializable;
 
+import lombok.experimental.Accessors;
+
 
 //@SuppressWarnings("serial")
 //@Data
-//@Accessors(chain = true)
+@Accessors(chain = true)
 //@NoArgsConstructor
 public class Dept implements Serializable // 必須序列化
 {

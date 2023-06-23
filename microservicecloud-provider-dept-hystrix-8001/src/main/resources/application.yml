@@ -1,0 +1,40 @@
+server:
+  port: 8001
+  
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路徑
+  type-aliases-package: com.frank.springcloud.entities    # 所有Entity別名類所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+    
+spring:
+   application:
+    name: microservicecloud-dept #對外暴露的為服務名子
+   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 當前數據源操作類型
+    driver-class-name: com.mysql.cj.jdbc.Driver              # mysql驅動包
+    url: jdbc:mysql://localhost:3306/clouddb01              # 數據庫名稱
+    username: root
+    password: 1234
+    dbcp2:
+      min-idle: 5                                           # 數據庫連接池的最小維持連接數
+      initial-size: 5                                       # 初始化連接數
+      max-total: 5                                          # 最大連接數
+      max-wait-millis: 200                                  # 等待連接獲取的最大超時時間
+      
+
+eureka:
+  client: #客戶端註冊進eureka服務列表內
+    service-url: 
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: microservicecloud-provider-dept1-hystrix #自定義服務器名稱
+    prefer-ip-address: true #訪問路徑可以顯示IP
+
+info:
+  app.name: frank-microservicecloud
+  company.name: frank
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+ 
+ 
